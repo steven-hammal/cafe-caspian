@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29403.142
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeCaspian.Application", "CafeCaspian\CafeCaspian.Application.csproj", "{DBD6BBDF-6D38-40E4-99B2-5C9F4032AB98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CafeCaspian.UnitTests", "CafeCaspian.UnitTests\CafeCaspian.UnitTests.csproj", "{E0EC241C-50CF-42F3-A444-8758F88B23EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeCaspian.UnitTests", "CafeCaspian.UnitTests\CafeCaspian.UnitTests.csproj", "{E0EC241C-50CF-42F3-A444-8758F88B23EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CafeCaspian.Domain", "CafeCaspian.Domain\CafeCaspian.Domain.csproj", "{A9D84435-3499-4E27-B242-9726D9D4B1E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeCaspian.Domain", "CafeCaspian.Domain\CafeCaspian.Domain.csproj", "{A9D84435-3499-4E27-B242-9726D9D4B1E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeCaspian.Application", "CafeCaspian.Application\CafeCaspian.Application.csproj", "{B5A2D95B-BF9A-41CF-B395-7D03A178EAF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DBD6BBDF-6D38-40E4-99B2-5C9F4032AB98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DBD6BBDF-6D38-40E4-99B2-5C9F4032AB98}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DBD6BBDF-6D38-40E4-99B2-5C9F4032AB98}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DBD6BBDF-6D38-40E4-99B2-5C9F4032AB98}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E0EC241C-50CF-42F3-A444-8758F88B23EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E0EC241C-50CF-42F3-A444-8758F88B23EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0EC241C-50CF-42F3-A444-8758F88B23EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +23,10 @@ Global
 		{A9D84435-3499-4E27-B242-9726D9D4B1E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9D84435-3499-4E27-B242-9726D9D4B1E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9D84435-3499-4E27-B242-9726D9D4B1E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5A2D95B-BF9A-41CF-B395-7D03A178EAF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5A2D95B-BF9A-41CF-B395-7D03A178EAF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5A2D95B-BF9A-41CF-B395-7D03A178EAF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5A2D95B-BF9A-41CF-B395-7D03A178EAF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
