@@ -3,9 +3,7 @@ using CafeCaspian.Domain;
 using CafeCaspian.Domain.Metadata;
 using ExpectedObjects;
 using Microsoft.Extensions.Configuration;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace CafeCaspian.UnitTests
