@@ -51,7 +51,7 @@ namespace CafeCaspian.UnitTests
             var exception = Should.Throw<ValidationException>(() => _service.GetTotalFor(orderedItems));
 
             // Then
-            exception.Message.ShouldBe("ItemX is not on the menu");
+            exception.Message.ShouldBe("The following items are not on the menu: ItemX");
         }
 
         [Fact]
@@ -64,7 +64,7 @@ namespace CafeCaspian.UnitTests
             var result = _service.GetTotalFor(orderedItems);
 
             // Then
-            result.ShouldBe(5.00f);
+            result.ShouldBe(5.00);
         }
     }
 }

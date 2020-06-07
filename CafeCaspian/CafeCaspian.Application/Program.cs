@@ -20,10 +20,12 @@ namespace CafeCaspian.Application
 
             var menuFactory = new MenuFactory();
             var menu = menuFactory.GetMenuFromConfig(config.GetSection("Menu"));
+            var orderService = new OrderService(menu);
 
-            var purchasedItems = args[0].Split(",");
+            var orderedItems = args;
+            var total = orderService.GetTotalFor(orderedItems);
 
-            Console.WriteLine(purchasedItems[0]);
+            Console.WriteLine(total);
             Console.ReadLine();
 
             DisposeServices();
