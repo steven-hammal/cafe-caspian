@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CafeCaspian.Application": {
+      "commandName": "Project",
+      "commandLineArgs": "\"Cola\", \"Coffee\""
+    }
+  }
+}

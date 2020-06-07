@@ -1,0 +1,10 @@
+{
+  "TestMenu": [
+    {
+      "Name": "Test",
+      "Category": "Drink",
+      "Temperature": "Cold",
+      "Price": 0.50
+    }
+  ]
+}
