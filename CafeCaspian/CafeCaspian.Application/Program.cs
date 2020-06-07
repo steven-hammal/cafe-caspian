@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using FluentValidation;
 
 namespace CafeCaspian.Application
 {
@@ -23,9 +24,17 @@ namespace CafeCaspian.Application
             var orderService = new OrderService(menu);
 
             var orderedItems = args;
-            var total = orderService.GetTotalFor(orderedItems);
 
-            Console.WriteLine(total);
+            try
+            {
+                var total = orderService.GetTotalFor(orderedItems);
+                Console.WriteLine(total);
+            }
+            catch(ValidationException exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
+
             Console.ReadLine();
 
             DisposeServices();
