@@ -25,7 +25,7 @@ namespace CafeCaspian.Application
 
             var cheque = new Cheque(_menu.Items.Where(mi => orderedItems.Contains(mi.Name)));
 
-            return cheque.NetTotal;
+            return cheque.GrossTotal;
         }
 
         private void Validate(IEnumerable<string> orderedItems)
