@@ -2,7 +2,7 @@
   "profiles": {
     "CafeCaspian.Application": {
       "commandName": "Project",
-      "commandLineArgs": "\"Cola\" \"Coffee\" \"Steak Sandwich\" \"Fish eyes\""
+      "commandLineArgs": "\"Cola\" \"Coffee\" \"Steak Sandwich\""
     }
   }
 }
