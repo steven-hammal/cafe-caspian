@@ -8,7 +8,7 @@ namespace CafeCaspian.Application
 {
     public interface IOrderService
     {
-        double GetTotalFor(IEnumerable<string> orderedItems); // TODO: Strongly type oredered items
+        double GetTotalFor(IEnumerable<string> orderedItems);
     }
     public class OrderService : IOrderService
     {
@@ -23,7 +23,9 @@ namespace CafeCaspian.Application
         {
             Validate(orderedItems);
 
-            return _menu.Items.Where(mi => orderedItems.Contains(mi.Name)).Select(mi => mi.Price).Sum();
+            var cheque = new Cheque(_menu.Items.Where(mi => orderedItems.Contains(mi.Name)));
+
+            return cheque.OrderedItems.Sum(i => i.Price);
         }
 
         private void Validate(IEnumerable<string> orderedItems)

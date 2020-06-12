@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using System;
-using System.Collections.Generic;
 using FluentValidation;
 
 namespace CafeCaspian.Application
@@ -17,7 +16,7 @@ namespace CafeCaspian.Application
               .AddJsonFile("appsettings.json", false)
               .Build();
 
-            RegisterServices(config);
+            RegisterServices();
 
             var menuFactory = new MenuFactory();
             var menu = menuFactory.GetMenuFromConfig(config.GetSection("Menu"));
@@ -40,7 +39,7 @@ namespace CafeCaspian.Application
             DisposeServices();
         }
 
-        private static void RegisterServices(IConfiguration config)
+        private static void RegisterServices()
         {
             var services = new ServiceCollection();
             services.AddOptions();

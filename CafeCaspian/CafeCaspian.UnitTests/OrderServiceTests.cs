@@ -1,9 +1,7 @@
 ﻿using CafeCaspian.Application;
 using CafeCaspian.Domain;
 using CafeCaspian.Domain.Metadata;
-using ExpectedObjects;
 using FluentValidation;
-using Microsoft.Extensions.Configuration;
 using Shouldly;
 using System.Collections.Generic;
 using Xunit;

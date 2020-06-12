@@ -1,0 +1,20 @@
+﻿using CafeCaspian.Domain.Metadata;
+
+namespace CafeCaspian.Domain
+{
+    public class MenuItem
+    {
+        public string Name { get; private set; }
+        public Category Category { get; private set; }
+        public Temperature Temperature { get; private set; }
+        public double Price { get; private set; }
+
+        public MenuItem(string name, Category category, Temperature temperature, double price)
+        {
+            Name = name;
+            Category = category;
+            Temperature = temperature;
+            Price = price;
+        }
+    }
+}
