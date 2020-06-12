@@ -31,7 +31,7 @@ namespace CafeCaspian.UnitTests
             // Then
             var expectedMenu = new Menu();
             expectedMenu.AddMenuItems(new List<MenuItem> { 
-                new MenuItem(name: "Test", category: Category.Drink, temperature: Temperature.Cold, price: 0.5)
+                new MenuItem(name: "Test", category: Category.Drink, temperature: Temperature.Cold, price: 0.5m)
             });
             var expected = expectedMenu.ToExpectedObject();
 

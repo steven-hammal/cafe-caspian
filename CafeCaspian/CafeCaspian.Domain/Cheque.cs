@@ -10,10 +10,12 @@ namespace CafeCaspian.Domain
     {
         // Leaving this mutable as is likely that functionality around adding/removing items from orders could be needed
         public IEnumerable<MenuItem> OrderedItems { get; set; }
+        public decimal NetTotal { get; private set; }
 
         public Cheque(IEnumerable<MenuItem> orderedItems)
         {
             OrderedItems = orderedItems;
+            NetTotal = OrderedItems.Sum(i => i.Price);
         }
 
         public bool ContainsFood()

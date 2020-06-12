@@ -1,10 +1,7 @@
 ﻿using CafeCaspian.Domain;
 using CafeCaspian.Domain.Metadata;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace CafeCaspian.Application
 {
@@ -25,7 +22,7 @@ namespace CafeCaspian.Application
                                             name: x.GetValue<string>("Name"),
                                             category: x.GetValue<Category>("Category"),
                                             temperature: x.GetValue<Temperature>("Temperature"),
-                                            price: x.GetValue<double>("Price")
+                                            price: x.GetValue<decimal>("Price")
                                           )
                                   ).ToList();
 

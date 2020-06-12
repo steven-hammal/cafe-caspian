@@ -7,9 +7,9 @@ namespace CafeCaspian.Domain
         public string Name { get; private set; }
         public Category Category { get; private set; }
         public Temperature Temperature { get; private set; }
-        public double Price { get; private set; }
+        public decimal Price { get; private set; }
 
-        public MenuItem(string name, Category category, Temperature temperature, double price)
+        public MenuItem(string name, Category category, Temperature temperature, decimal price)
         {
             Name = name;
             Category = category;

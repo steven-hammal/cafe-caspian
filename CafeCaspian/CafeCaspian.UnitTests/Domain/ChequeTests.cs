@@ -16,11 +16,24 @@ namespace CafeCaspian.UnitTests.Domain
             _menu = new Menu();
             var menuItems = new List<MenuItem>
             {
-                new MenuItem(name: "ColdDrink", category: Category.Drink, temperature: Temperature.Cold, price: 0.10),
-                new MenuItem(name: "ColdFood", category: Category.Food, temperature: Temperature.Cold, price: 0.10),
-                new MenuItem(name: "HotFood", category: Category.Food, temperature: Temperature.Hot, price: 0.10)
+                new MenuItem(name: "ColdDrink", category: Category.Drink, temperature: Temperature.Cold, price: 0.10m),
+                new MenuItem(name: "ColdFood", category: Category.Food, temperature: Temperature.Cold, price: 0.10m),
+                new MenuItem(name: "HotFood", category: Category.Food, temperature: Temperature.Hot, price: 0.10m)
             };
             _menu.AddMenuItems(menuItems);
+        }
+
+        [Fact]
+        public void It_calculates_net_total()
+        {
+            //Given
+            var orderedMenuItems = _menu.Items;
+
+            // When
+            var cheque = new Cheque(orderedMenuItems);
+
+            // Then
+            cheque.NetTotal.ShouldBe(0.3m);
         }
 
         [Fact]

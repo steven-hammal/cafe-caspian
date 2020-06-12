@@ -15,7 +15,7 @@ namespace CafeCaspian.UnitTests.Domain
             var menu = new Menu();
             var menuItems = new List<MenuItem>
             {
-                new MenuItem(name: "TestItem", category: Category.Drink, temperature: Temperature.Cold, price: 0.10)
+                new MenuItem(name: "TestItem", category: Category.Drink, temperature: Temperature.Cold, price: 0.10m)
             };
 
             // When
@@ -24,7 +24,7 @@ namespace CafeCaspian.UnitTests.Domain
             // Then
             var expected = new List<MenuItem>
             {
-                new MenuItem(name: "TestItem", category: Category.Drink, temperature: Temperature.Cold, price: 0.10)
+                new MenuItem(name: "TestItem", category: Category.Drink, temperature: Temperature.Cold, price: 0.10m)
             }.ToExpectedObject();
 
             expected.ShouldMatch(menu.Items);

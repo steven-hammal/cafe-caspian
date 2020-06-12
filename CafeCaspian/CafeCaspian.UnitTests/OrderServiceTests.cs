@@ -22,14 +22,14 @@ namespace CafeCaspian.UnitTests
                     name: "ItemOne",
                     category: Category.Food,
                     temperature: Temperature.Cold,
-                    price: 2.00
+                    price: 2.00m
                 ),
                  new MenuItem
                 (
                     name: "ItemTwo",
                     category: Category.Drink,
                     temperature: Temperature.Cold,
-                    price: 3.00
+                    price: 3.00m
                 )
             };
 
@@ -62,7 +62,7 @@ namespace CafeCaspian.UnitTests
             var result = _service.GetTotalFor(orderedItems);
 
             // Then
-            result.ShouldBe(5.00);
+            result.ShouldBe(5.00m);
         }
     }
 }
