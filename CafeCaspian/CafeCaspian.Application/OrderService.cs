@@ -13,10 +13,12 @@ namespace CafeCaspian.Application
     public class OrderService : IOrderService
     {
         private readonly Menu _menu;
+        private readonly ISurchargeService _surchargeService;
 
-        public OrderService(Menu menu)
+        public OrderService(Menu menu, ISurchargeService surchargeService)
         {
             _menu = menu;
+            _surchargeService = surchargeService;
         }
 
         public decimal GetTotalFor(IEnumerable<string> orderedItems)
@@ -24,8 +26,9 @@ namespace CafeCaspian.Application
             Validate(orderedItems);
 
             var cheque = new Cheque(_menu.Items.Where(mi => orderedItems.Contains(mi.Name)));
+            var serviceCharge = _surchargeService.GetSurchargeFor(cheque);
 
-            return cheque.GrossTotal;
+            return decimal.Round(cheque.NetTotal + serviceCharge, 2, MidpointRounding.AwayFromZero); // My preferred way of rounding a decimal to a monetary value http://msdn.microsoft.com/en-us/library/9s0xa85y.aspx
         }
 
         private void Validate(IEnumerable<string> orderedItems)

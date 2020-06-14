@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using System;
 using FluentValidation;
+using CafeCaspian.Application.Config;
 
 namespace CafeCaspian.Application
 {
@@ -20,7 +21,7 @@ namespace CafeCaspian.Application
 
             var menuFactory = new MenuFactory();
             var menu = menuFactory.GetMenuFromConfig(config.GetSection("Menu"));
-            var orderService = new OrderService(menu);
+            var orderService = new OrderService(menu, serviceProvider.GetRequiredService<ISurchargeService>());
 
             var orderedItems = args;
 
@@ -43,6 +44,8 @@ namespace CafeCaspian.Application
         {
             var services = new ServiceCollection();
             services.AddOptions();
+            services.Configure<SurchargeOptions>(config.GetSection(SurchargeOptions.Surcharge));
+            services.AddSingleton<ISurchargeService, SurchargeService>();
 
             serviceProvider = services.BuildServiceProvider();
         }

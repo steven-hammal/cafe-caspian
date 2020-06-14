@@ -2,6 +2,7 @@
 using CafeCaspian.Domain;
 using CafeCaspian.Domain.Metadata;
 using FluentValidation;
+using Moq;
 using Shouldly;
 using System.Collections.Generic;
 using Xunit;
@@ -12,6 +13,7 @@ namespace CafeCaspian.UnitTests
     {
         private readonly IOrderService _service;
         private readonly Menu _menu;
+        private readonly Mock<ISurchargeService> _mockSurchargeService;
 
         public OrderServiceTests()
         {
@@ -36,7 +38,10 @@ namespace CafeCaspian.UnitTests
             _menu = new Menu();
             _menu.AddMenuItems(testMenuItems);
 
-            _service = new OrderService(_menu);
+            _mockSurchargeService = new Mock<ISurchargeService>();
+            _mockSurchargeService.Setup(m => m.GetSurchargeFor(It.IsAny<Cheque>())).Returns(1.0m);
+
+            _service = new OrderService(_menu, _mockSurchargeService.Object);
         }
 
         [Fact]
@@ -62,7 +67,7 @@ namespace CafeCaspian.UnitTests
             var result = _service.GetTotalFor(orderedItems);
 
             // Then
-            result.ShouldBe(5.00m);
+            result.ShouldBe(6.00m);
         }
     }
 }
