@@ -25,7 +25,14 @@ namespace CafeCaspian.Application
         {
             Validate(orderedItems);
 
-            var cheque = new Cheque(_menu.Items.Where(mi => orderedItems.Contains(mi.Name)));
+            var orderedMenuItems = new List<MenuItem>();
+
+            foreach (var item in orderedItems)
+            {
+                orderedMenuItems.Add(_menu.Items.Single(mi => mi.Name.Equals(item)));
+            }
+
+            var cheque = new Cheque(orderedMenuItems);
             var serviceCharge = _surchargeService.GetSurchargeFor(cheque);
 
             return decimal.Round(cheque.NetTotal + serviceCharge, 2, MidpointRounding.AwayFromZero); // My preferred way of rounding a decimal to a monetary value http://msdn.microsoft.com/en-us/library/9s0xa85y.aspx
