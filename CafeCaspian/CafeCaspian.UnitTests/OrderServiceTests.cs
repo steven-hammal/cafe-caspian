@@ -69,5 +69,18 @@ namespace CafeCaspian.UnitTests
             // Then
             result.ShouldBe(6.00m);
         }
+
+        [Fact]
+        public void It_gets_total_when_multiple_of_same_item_ordered()
+        {
+            // Given
+            var orderedItems = new List<string>() { "ItemOne", "ItemOne" };
+
+            // When
+            var result = _service.GetTotalFor(orderedItems);
+
+            // Then
+            result.ShouldBe(5.00m);
+        }
     }
 }
